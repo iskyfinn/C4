@@ -1,0 +1,79 @@
+{
+    "classes": [
+      {
+        "name": "OracleFinancialsClient",
+        "description": "Handles authentication and communication with Oracle Fusion APIs.",
+        "attributes": ["authToken: String", "apiEndpoint: String"],
+        "methods": ["getInvoiceData()", "submitExpenseReport()", "refreshAuthToken()"]
+      },
+      {
+        "name": "InvoiceSyncService",
+        "description": "Coordinates synchronization of invoice data from Oracle Fusion.",
+        "attributes": ["oracleClient: OracleFinancialsClient"],
+        "methods": ["syncInvoices()", "validateInvoices()"]
+      },
+      {
+        "name": "ExpenseReportService",
+        "description": "Handles retrieval and validation of expense report data.",
+        "attributes": ["oracleClient: OracleFinancialsClient"],
+        "methods": ["syncExpenseReports()", "validateReports()"]
+      },
+      {
+        "name": "OracleApiException",
+        "description": "Represents errors encountered when interacting with Oracle Fusion APIs.",
+        "attributes": ["errorCode: String", "errorMessage: String"],
+        "methods": ["logError()", "toJson()"]
+      },
+      {
+        "name": "RetryHandler",
+        "description": "Implements retry logic for failed API requests with exponential backoff.",
+        "attributes": ["maxRetries: int", "retryDelay: int"],
+        "methods": ["retryRequest(Runnable apiCall)", "calculateBackoff(int attempt)"]
+      },
+      {
+        "name": "AuditTrailRecorder",
+        "description": "Records audit trails of integration activities for compliance.",
+        "attributes": ["auditDatabase: DataSource"],
+        "methods": ["recordInvoiceSync(Map invoiceData)", "recordExpenseSync(Map expenseData)"]
+      }
+    ],
+    "associations": [
+      {
+        "from": "InvoiceSyncService",
+        "to": "OracleFinancialsClient",
+        "label": "Uses Oracle API client"
+      },
+      {
+        "from": "ExpenseReportService",
+        "to": "OracleFinancialsClient",
+        "label": "Uses Oracle API client"
+      },
+      {
+        "from": "InvoiceSyncService",
+        "to": "AuditTrailRecorder",
+        "label": "Records invoice sync operations"
+      },
+      {
+        "from": "ExpenseReportService",
+        "to": "AuditTrailRecorder",
+        "label": "Records expense report operations"
+      },
+      {
+        "from": "OracleFinancialsClient",
+        "to": "RetryHandler",
+        "label": "Handles API call retries"
+      },
+      {
+        "from": "OracleFinancialsClient",
+        "to": "OracleApiException",
+        "label": "Throws API errors"
+      }
+    ],
+    "inheritances": [
+      {
+        "subclass": "OracleApiException",
+        "superclass": "Exception"
+      }
+    ]
+  }
+  

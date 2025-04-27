@@ -1,0 +1,14 @@
+{
+    "container": "Order Service", 
+    "components": [
+        {"id": "1", "name": "OrderController", "technology": "Spring MVC", "description": "Handles order requests"},
+        {"id": "2", "name": "OrderService", "technology": "Spring Service", "description": "Manages order logic"},
+        {"id": "3", "name": "OrderRepository", "technology": "Spring Data JPA", "description": "Accesses order data"},
+        {"id": "4", "name": "PaymentGateway", "technology": "Library X", "description": "Processes payments"}
+    ],
+    "relationships": [
+        {"from": "1", "to": "2", "label": "Uses"},
+        {"from": "2", "to": "3", "label": "Uses"},
+        {"from": "1", "to": "4", "label": "Uses"}
+    ]
+}

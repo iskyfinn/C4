@@ -1,0 +1,106 @@
+{
+    "containers": [
+      {
+        "name": "Web Portal",
+        "technology": "React + Node.js",
+        "type": "Application",
+        "description": "Provides UI for architects, analysts, and security officers."
+      },
+      {
+        "name": "API Gateway",
+        "technology": "AWS API Gateway",
+        "type": "Application",
+        "description": "Routes secure API traffic to internal services."
+      },
+      {
+        "name": "Identity Service",
+        "technology": "Azure AD B2C",
+        "type": "Application",
+        "description": "Handles authentication, single sign-on, and identity federation."
+      },
+      {
+        "name": "Integration Service",
+        "technology": "Spring Boot",
+        "type": "Application",
+        "description": "Orchestrates data synchronization between external systems."
+      },
+      {
+        "name": "Analytics Engine",
+        "technology": "Python (Pandas, BigQuery SDK)",
+        "type": "Application",
+        "description": "Processes and analyzes operational and business KPIs."
+      },
+      {
+        "name": "Document Storage Service",
+        "technology": "AWS S3 + Lambda",
+        "type": "Application",
+        "description": "Stores deployment artifacts, system backups, and documentation."
+      },
+      {
+        "name": "Compliance Auditing Module",
+        "technology": "Python + GAIA SDK",
+        "type": "Application",
+        "description": "Generates and sends secure compliance audit data to GAIA Federation."
+      },
+      {
+        "name": "Workflow Automation Service",
+        "technology": "ServiceNow Integration APIs",
+        "type": "Application",
+        "description": "Automates employee-related workflows and service desk operations."
+      },
+      {
+        "name": "Financial Data Connector",
+        "technology": "Oracle Fusion API SDK",
+        "type": "Application",
+        "description": "Integrates and synchronizes financial data from Oracle Fusion Financials."
+      }
+    ],
+    "relationships": [
+      {
+        "from": "Web Portal",
+        "to": "API Gateway",
+        "label": "Sends user requests via APIs"
+      },
+      {
+        "from": "API Gateway",
+        "to": "Identity Service",
+        "label": "Handles authentication for user requests"
+      },
+      {
+        "from": "API Gateway",
+        "to": "Integration Service",
+        "label": "Routes integration API calls"
+      },
+      {
+        "from": "API Gateway",
+        "to": "Analytics Engine",
+        "label": "Triggers data analytics queries"
+      },
+      {
+        "from": "Integration Service",
+        "to": "Oracle Fusion Financials",
+        "label": "Synchronizes financial transactions and data"
+      },
+      {
+        "from": "Integration Service",
+        "to": "ServiceNow",
+        "label": "Triggers employee workflows"
+      },
+      {
+        "from": "Integration Service",
+        "to": "Google BigQuery",
+        "label": "Loads operational data for reporting"
+      },
+      {
+        "from": "Document Storage Service",
+        "to": "AWS S3 Storage",
+        "label": "Stores and retrieves documents, backups, and logs"
+      },
+      {
+        "from": "Compliance Auditing Module",
+        "to": "GAIA Data Federation",
+        "label": "Pushes secure compliance and audit data"
+      }
+    ]
+  }
+  

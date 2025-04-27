@@ -1,0 +1,13 @@
+{
+  "elements": [
+    {"id": "1", "name": "User Interface", "type": "Container", "parentId": null},
+    {"id": "2", "name": "API Gateway", "type": "Container", "parentId": null},
+    {"id": "3", "name": "HLDD Management Service", "type": "Container", "parentId": null},
+    {"id": "4", "name": "User Management Service", "type": "Container", "parentId": null}
+  ],
+  "relationships": [
+    {"from": "1", "to": "2", "label": "Calls"},
+    {"from": "2", "to": "3", "label": "Forwards"},
+    {"from": "2", "to": "4", "label": "Authenticates"}
+  ]
+}

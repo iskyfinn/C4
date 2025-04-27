@@ -1,0 +1,100 @@
+{
+    "system_name": "Enterprise Solution Architecture Platform",
+    "users": [
+      {
+        "name": "Solution Architect",
+        "description": "Designs system architectures, oversees integrations across multi-cloud environments."
+      },
+      {
+        "name": "DevOps Engineer",
+        "description": "Deploys applications, automates infrastructure, manages cloud services."
+      },
+      {
+        "name": "Security Officer",
+        "description": "Ensures compliance, manages identity and access controls across cloud providers."
+      },
+      {
+        "name": "Business Analyst",
+        "description": "Gathers requirements, monitors system KPIs, ensures business alignment."
+      }
+    ],
+    "external_systems": [
+      {
+        "name": "Oracle Fusion Financials",
+        "description": "Handles enterprise financial operations, budgeting, and expense management."
+      },
+      {
+        "name": "AWS S3 Storage",
+        "description": "Stores application artifacts, documents, and system backups."
+      },
+      {
+        "name": "Azure Active Directory",
+        "description": "Manages single sign-on (SSO) and identity federation across platforms."
+      },
+      {
+        "name": "Google BigQuery",
+        "description": "Processes large-scale analytics queries on application and operational data."
+      },
+      {
+        "name": "GAIA Data Federation",
+        "description": "Provides secure cross-border cloud data management adhering to GDPR."
+      },
+      {
+        "name": "ServiceNow",
+        "description": "Manages employee workflows, service requests, and IT operations."
+      }
+    ],
+    "relationships": [
+      {
+        "source": "Solution Architect",
+        "target": "Enterprise Solution Architecture Platform",
+        "label": "Designs architecture blueprints, manages system integrations"
+      },
+      {
+        "source": "DevOps Engineer",
+        "target": "Enterprise Solution Architecture Platform",
+        "label": "Deploys and manages applications across clouds"
+      },
+      {
+        "source": "Security Officer",
+        "target": "Enterprise Solution Architecture Platform",
+        "label": "Configures security controls, audits system access"
+      },
+      {
+        "source": "Business Analyst",
+        "target": "Enterprise Solution Architecture Platform",
+        "label": "Defines business requirements, analyzes KPIs"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "Oracle Fusion Financials",
+        "label": "Integrates financial data and workflows"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "AWS S3 Storage",
+        "label": "Stores application logs, deployment artifacts"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "Azure Active Directory",
+        "label": "Uses Azure AD for identity management and SSO"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "Google BigQuery",
+        "label": "Pushes operational data for analytics and reporting"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "GAIA Data Federation",
+        "label": "Federates sensitive data securely across regions"
+      },
+      {
+        "source": "Enterprise Solution Architecture Platform",
+        "target": "ServiceNow",
+        "label": "Triggers employee workflow automations"
+      }
+    ]
+  }
+  
