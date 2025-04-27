@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finn C4 Diagram Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Upload C4 Ingestion File</h1>
+
+        <form id="uploadForm" method="post" action="/upload" enctype="multipart/form-data">
+            <label for="fileInput">Choose a file to upload:</label>
+            <input type="file" id="fileInput" name="file" title="Select a file to upload" required>
+
+            <select id="levelSelect" name="level" title="Select a C4 level" required>
+                <option value="">Select C4 Level</option>
+                <option value="c1">C1 - Context</option>
+                <option value="c2">C2 - Container</option>
+                <option value="c3">C3 - Component</option>
+                <option value="c4">C4 - Code</option>
+            </select>
+
+            <button id="uploadBtn" type="submit">Upload and Generate</button>
+            <button id="downloadJsonBtn" style="display:none;">Download Parsed C4 JSON</button>
+        </form>
+
+        <div id="status"></div>
+        <div id="loadingSpinner" style="display:none;">Parsing and Rendering...</div>
+
+        <div id="diagramPreview" style="margin-top: 20px;">
+            <svg id="diagramSVG"></svg>  <---  **ADD THIS LINE**
+        </div>
+    </div>
+
+    <script src="/static/upload-handlers.js"></script>
+</body>
+
+</html>
